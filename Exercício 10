@@ -1,0 +1,19 @@
+10. Crie um algoritmo que leia um valor de hora (HH:MM) e informe (calcule) quantos minutos se passaram desde o início do dia (00:00). 
+
+import java.util.Scanner; 
+public class Main { 
+    public Main() { 
+    } 
+    public static void main(String[] args) { 
+        Scanner entrada = new Scanner(System.in); 
+ 
+        System.out.printf("Digite as horas: "); 
+        Integer HH = entrada.nextInt(); 
+ 
+        System.out.printf("Digite os minutos: "); 
+        Integer mm = entrada.nextInt(); 
+ 
+        double result = (double)((HH*60)+mm); 
+        System.out.printf("Valor de minutos totais: "+result);
+  }
+} 
