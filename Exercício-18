@@ -1,0 +1,35 @@
+18. (Decom/UFOP - Adaptado) A permissão para uma pessoa votar ou não é determinado pela idade dela, conforme a tabela 4. 
+
+Crie um programa capaz de ler a idade de uma pessoa e imprimir sua classificação eleitoral. 
+
+Entrada: QUAL A IDADE DA PESSOA?: 17 
+
+Saída: ELEITOR FACULTATIVO 
+
+import java.util.Scanner; 
+ 
+public class Main { 
+    public Main() { 
+    } 
+    public static void main(String[] args) { 
+        Scanner entrada = new Scanner(System.in); 
+ 
+        int idade; 
+ 
+        System.out.print("QUAL A IDADE DA PESSOA?:"); 
+        idade = entrada.nextInt(); 
+ 
+        if ( idade < 16 ){ 
+            System.out.printf("Não é eleitor"); 
+ 
+        } else if ( idade >=16 && idade<=17 ) { 
+            System.out.printf("Eleitor facultativo"); 
+ 
+        } else if ( idade >17 && idade<=65 ) { 
+            System.out.printf("Eleitor obrigatório"); 
+ 
+        } else{ 
+            System.out.printf("Eleitor facultativo"); 
+        }
+    }
+} 
