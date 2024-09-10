@@ -1,0 +1,13 @@
+import java.util.Scanner; 
+ 
+public class Main { 
+    public Main() { 
+    } 
+    public static void main(String[] args) { 
+        Scanner entrada = new Scanner(System.in); 
+        System.out.printf("Digite o valor em real: "); 
+        Integer n1 = entrada.nextInt(); 
+        double mult = (double)n1 * 4.95; 
+        System.out.printf("O valor em dolar é: " + mult); 
+        Integer n2 = entrada.nextInt(); 
+    }} 
