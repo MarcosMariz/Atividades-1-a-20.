@@ -1,0 +1,24 @@
+14. A organização mundial da saúde recomenda que sejam ingeridos 35 ml de água por dia, para cada quilograma de peso. Crie um algoritmo que recebe o peso de uma 
+pessoa e informe a quantidade recomendada de água em litros. 
+
+import java.util.Scanner; 
+ 
+public class Main { 
+    public Main() { 
+    } 
+    public static void main(String[] args) { 
+        Scanner entrada = new Scanner(System.in); 
+ 
+        float peso; 
+ 
+        System.out.println("Digite o seu peso: "); 
+        peso = entrada.nextInt(); 
+ 
+        double result = (double)(peso * 0.035); //resultado da quantidade de agua necessária a ser ingerida 
+ 
+        // Exibe os resultados 
+        System.out.println("\nA quantidade recomendada de água em litros é: " +result +"L"); 
+ 
+    } 
+} 
+ 
