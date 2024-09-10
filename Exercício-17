@@ -1,0 +1,31 @@
+17. Escreva um programa em Java para ler o número de votos brancos, nulos e válidos. Calcular e escrever o percentual que cada um representa em relação ao total de eleitores. 
+
+import java.util.Scanner; 
+ 
+public class Main { 
+    public Main() { 
+    } 
+    public static void main(String[] args) { 
+        Scanner entrada = new Scanner(System.in); 
+ 
+        int x,y,z; 
+        System.out.println("Número de votos bracos: "); 
+        x = entrada.nextInt(); 
+ 
+        System.out.println("Número de votos nulos: "); 
+        y = entrada.nextInt(); 
+ 
+        System.out.println("Número de votos válidos: "); 
+        z = entrada.nextInt(); 
+ 
+        double result = (double)(+x +y +z); 
+        System.out.println("O n° total de votos é: " + result); 
+ 
+        double percentualBrancos = ((double) x / result) * 100; 
+        double percentualNulos   = ((double) y / result) * 100; 
+        double percentualValidos = ((double) z / result) * 100; 
+ 
+        System.out.println("A porcentagem dos votos é:"); 
+        System.out.println("Branco = " +percentualBrancos +"% |"+ "Nulos = " +percentualNulos +"% |"+ " Válidos = "+percentualValidos +"% "); 
+    } 
+} 
