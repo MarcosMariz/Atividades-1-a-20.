@@ -1,0 +1,59 @@
+13. Incremente o programa da questão 6, para informar o valor do metro quadrado da cerâmica escolhido e o valor total a ser pago. 
+
+import java.util.Scanner; 
+public class Main { 
+    public Main() { 
+    } 
+/*o valor do metro quadrado da cerâmica escolhido e o valor total a ser pago.*/ 
+    public static void main(String[] args) { 
+        Scanner entrada = new Scanner(System.in); 
+ 
+        float largura,comprimento,larguraCeramica,comprimentoCeramica,valorc; 
+ 
+        System.out.println("Digite largura da área: "); 
+        largura = entrada.nextInt(); 
+ 
+        System.out.println("Digite comprimento da área: "); 
+        comprimento = entrada.nextInt(); 
+ 
+        System.out.println("Digite largura da Ceramica: "); 
+        larguraCeramica = entrada.nextInt(); 
+ 
+        System.out.println("Digite comprimento da Ceramica: "); 
+        comprimentoCeramica = entrada.nextInt(); 
+ 
+        double result = (double)(largura * comprimento); //resultado area 
+ 
+        double result2 = (double)(larguraCeramica * comprimentoCeramica); //resultado ceramica area 
+ 
+        // Calcula a quantidade de cerâmica necessária, arredondando para cima e adicionando 10% para acabamento 
+        double quantidadeNecessaria = result / result2; 
+        quantidadeNecessaria *= 1.10; // x = x * 2 --> Adiciona 10% para acabamento 
+        int quantidadePecas = (int) Math.ceil(quantidadeNecessaria); 
+ 
+        // Exibe os resultados 
+        System.out.println("\nÁrea total a ser revestida: " + result + " m²"); 
+        System.out.println("Área de cada peça de cerâmica: " + result2 + " m²"); 
+        System.out.println("Quantidade de peças necessárias (com 10% para acabamento): " + quantidadePecas); 
+ 
+        //valor 
+        System.out.println("Digite valor do m² da cerâmica: "); 
+        valorc = entrada.nextInt(); 
+ 
+        float valorTotal = (float)( quantidadePecas * valorc); //resultado valor area total 
+        System.out.println("O valor total a ser pago é: " +valorTotal); 
+ 
+        System.out.println("\nTroca 1: "); 
+        System.out.println("\nvalor m²: " + valorc); 
+        System.out.println("\nO valor total a ser pago é: " + valorTotal); 
+ 
+        float temp = valorc; 
+        valorc = valorTotal; 
+        valorTotal = temp; 
+         
+       System.out.println("\nTroca 2:: "); 
+        System.out.println("\nO valor total a ser pago é: " + valorTotal); 
+        System.out.println("\nvalor m²: " + valorc); 
+    } 
+} 
+ 
