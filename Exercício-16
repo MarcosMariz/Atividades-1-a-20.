@@ -1,0 +1,39 @@
+16. Escreva um programa em Java para ler as notas da primeira, segunda e terceira avaliações de um aluno, todas valem dez pontos. Calcular a média aritmética simples e escrever uma mensagem que diga se o 
+aluno foi ou não aprovado (considerar que média igual ou maior que 7 o aluno é aprovado). Escrever também a média calculada. 
+
+import java.util.Scanner; 
+public class Main {    public Main() { 
+    } 
+    public static void main(String[] args) { 
+        Scanner entrada = new Scanner(System.in); 
+int A = -1; // Inicializa A com um valor fora do intervalo permitido 
+        while (A < 0 || A > 10) { 
+            System.out.println("\r\nDigite o valor da prova 1 (entre 0 e 10): "); 
+            A = entrada.nextInt(); 
+            if (A < 0 || A > 10) { 
+                System.out.println("Valor inválido! Por favor, digite um número entre 0 e 10."); 
+            }} 
+        int B = -1; // Inicializa A com um valor fora do intervalo permitido 
+        while (B < 0 || B > 10) { 
+            System.out.println("\r\nDigite o valor da prova 2 (entre 0 e 10): "); 
+            B = entrada.nextInt(); 
+            if (B < 0 || B > 10) { 
+                System.out.println("Valor inválido! Por favor, digite um número entre 0 e 10."); 
+            }} 
+        int C = -1; // Inicializa A com um valor fora do intervalo permitido 
+        while (C < 0 || C > 10) { 
+            System.out.println("\r\nDigite o valor da prova 3 (entre 0 e 10): "); 
+            C = entrada.nextInt(); 
+            if (C < 0 || C > 10) { 
+                System.out.println("Valor inválido! Por favor, digite um número entre 0 e 10."); 
+            } } 
+        double result = (double)((A + B +C)/3);//resultado media 
+        System.out.println("Sua média foi: "+result); 
+        if ( result >= 7 ){ 
+            System.out.printf("Parabéns, aprovado. :)"); 
+ 
+        } else { 
+            System.out.printf("Infelizmente, reprovado. :("); 
+          }
+      }
+}
