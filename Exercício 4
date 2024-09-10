@@ -1,0 +1,20 @@
+4. Crie um programa que calcula a média simples de três notas fornecidas pelo usuário. 
+
+import java.util.Scanner; 
+ 
+public class Main { 
+    public Main() { 
+    } 
+    public static void main(String[] args) { 
+        Scanner entrada = new Scanner(System.in); 
+        System.out.println("Iremos fazer uma divisão de 2 números naturais, onde se sobrará os números inteiros."); 
+        System.out.printf("Digite o primeiro numero: "); 
+        int x = entrada.nextInt(); 
+        System.out.printf("Digite o segundo numero: "); 
+        int y = entrada.nextInt(); 
+        int div = x / y; 
+        System.out.println("A divisão dos números informados foram: " + div); 
+        int resto = x % y; 
+        System.out.println("O resto da divisão é: " + resto); 
+    } 
+} 
