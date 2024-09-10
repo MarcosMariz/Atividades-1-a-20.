@@ -1,0 +1,40 @@
+15. Escreva um algoritmo que recebe dois pontos do plano cartesiano P1 = (x1, y1) e P2 = (x2, y2) e calcula a distância entre eles, dada por d(P1, P2) = raiz quadrada( (x1 − x2)2 + (y1 − y2)2.) 
+
+import java.util.Scanner; 
+public class Main { 
+    public Main() { 
+    } 
+ 
+    public static void main(String[] args) { 
+        Scanner entrada = new Scanner(System.in); 
+ 
+        float x1, y1,x2, y2; 
+        //P1 
+        System.out.println("Digite o x1: "); 
+        x1 = entrada.nextInt(); 
+ 
+        System.out.println("Digite o seu y1: "); 
+        y1 = entrada.nextInt(); 
+        System.out.println("P1 = ("+x1+"," +y1 +")"); 
+ 
+        //P2 
+        System.out.println("Digite o seu x2: "); 
+        x2 = entrada.nextInt(); 
+ 
+        System.out.println("Digite o seu y2: "); 
+        y2 = entrada.nextInt(); 
+        System.out.println("P2 = ("+x2+"," +y2 +")"); 
+ 
+        double resultx = (double)(x1 - x2);//resultado x1-x2 
+        double resulty = (double)(y1 - y2);//resuldado y1-y2 
+ 
+        double resultx2 = (double)(resultx * resultx); //resultado X(result)² 
+        double resulty2 = (double)(resulty * resulty); //resultado Y(result)² 
+ 
+        double resultxy = (double)(resulty2 + resultx2);//resultado (resulty2 + resultx2) 
+ 
+        double raiz = Math.sqrt(resultxy); //Recebe uma variavel do tipo double que representa o n° desejado para calcular a raiz quadrada. 
+        // Exibe o resultado 
+        System.out.println("A distância entre os dois pontos é: " + raiz);
+  }
+} 
