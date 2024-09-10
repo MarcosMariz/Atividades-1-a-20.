@@ -1,0 +1,38 @@
+12. Faça um programa para uma loja de cerâmica que ajuda no cálculo da quantidade de revestimento necessário para uma obra. A pessoa utilizadora deve informar as medidas 
+de largura e comprimento da área que será revestida e da cerâmica escolhida. Sempre arredonde o valor para cima, e acrescente dez por cento para o acabamento. 
+
+import java.util.Scanner; 
+ 
+public class Main { 
+public Main() {   } 
+ 
+
+   public static void main(String[] args) { 
+        Scanner entrada = new Scanner(System.in); 
+        float largura,comprimento,larguraCeramica,comprimentoCeramica; 
+ 
+        System.out.println("Digite largura da área: "); 
+        largura = entrada.nextInt(); 
+ 
+        System.out.println("Digite comprimento da área: "); 
+        comprimento = entrada.nextInt(); 
+ 
+        System.out.println("Digite largura da Ceramica: "); 
+        larguraCeramica = entrada.nextInt(); 
+ 
+        System.out.println("Digite comprimento da Ceramica: "); 
+        comprimentoCeramica = entrada.nextInt(); 
+ 
+        double result = (double)(largura * comprimento); //resultado area 
+ 
+        double result2 = (double)(larguraCeramica * comprimentoCeramica); //resultado ceramica 
+        // Calcula a quantidade de cerâmica necessária, arredondando para cima e adicionando 10% para acabamento 
+        double quantidadeNecessaria = result / result2; 
+        quantidadeNecessaria *= 1.10; // x = x * 2 --> Adiciona 10% para acabamento 
+        int quantidadePecas = (int) Math.ceil(quantidadeNecessaria); 
+ 
+        // Exibe os resultados 
+        System.out.println("\nÁrea total a ser revestida: " + result + " m²"); 
+        System.out.println("Área de cada peça de cerâmica: " + result2 + " m²"); 
+        System.out.println("Quantidade de peças necessárias (com 10% para acabamento): " + quantidadePecas);}} 
+ 
