@@ -1,0 +1,21 @@
+8. Faça um programa que converta a temperatura dada em Fahrenheit para Celsius. Você pode testar se a sua resposta está correta, saiba que 100C = 212F.  
+
+Considere C/5 = (F − 32)/9. 
+
+import java.util.Scanner; 
+ 
+public class Main { 
+    public Main() { 
+    } 
+    public static void main(String[] args) { 
+        Scanner entrada = new Scanner(System.in); 
+ 
+        System.out.printf("Digite o Celsius que será transformado para Fahrenheit: "); 
+        Integer x = entrada.nextInt(); 
+ 
+        double troca = (double)(((x/5)*9)+32); 
+        System.out.printf("O valor de " +x + "°C em Fahrenheit é: "+ troca + "°F"); 
+        entrada.close();
+    }
+} 
+ 
