@@ -1,0 +1,22 @@
+7. Escreva um programa que calcule os quadrados e cubos dos números de 0 a 10 e imprima os valores resultantes formatados, conforme a tabela 3. 
+
+import java.util.Scanner; 
+public class Main { 
+    public Main() { 
+    } 
+    public static void main(String[] args) { 
+        Scanner entrada = new Scanner(System.in); 
+        int A = -1; // Inicializa A com um valor fora do intervalo permitido 
+        while (A < 0 || A > 10) { 
+            System.out.println("\r\nDigite o valor de A (entre 0 e 10): "); 
+            A = entrada.nextInt(); 
+ 
+            if (A < 0 || A > 10) { 
+                System.out.println("Valor inválido! Por favor, digite um número entre 0 e 10."); 
+            } 
+        } 
+        System.out.println("numero | quadrado | cubo"); 
+        System.out.println("\nx¹ | x² | x³"); 
+        int mult = A * A; 
+        int mult2 = A* A* A; 
+        System.out.println( +A +"|"+ mult +"|" + mult2); 
