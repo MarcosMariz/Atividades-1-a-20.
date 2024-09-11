@@ -1,0 +1,66 @@
+19. Crie um programa para exibir o menu de um caixa eletrônico. Ele deve possuir as opções: Exibir saldo, Exibir extrato, Realizar depósito, Realizar saque, e Sair. Se alguma opção inválida for fornecida, 
+exiba uma mensagem de erro e saia do programa. Observação: Utilize a estrutura de seleção Switch /Case para implementar seu produto. Utilize números inteiros para indicar cada opção. 
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        double saldo = 1000.00;  // Saldo inicial definido
+        double valor;
+        int opcao;
+
+        do {
+            // Exibe o menu do caixa eletrônico
+            System.out.println("\nMENU CAIXA");
+            System.out.println("1 - Saldo");
+            System.out.println("2 - Extrato");
+            System.out.println("3 - Depósito");
+            System.out.println("4 - Saque");
+            System.out.println("5 - Sair");
+            System.out.print("Escolha uma opção: ");
+            opcao = entrada.nextInt();
+
+            // Switch para lidar com as diferentes opções
+            switch (opcao) {
+                case 1:
+                    System.out.printf("\nSeu saldo atual é: R$%.2f\n", saldo);
+                    break;  // Sem o brake ele continua executando as opções adiante
+                case 2:
+                    System.out.println("\nExtrato:");
+                    System.out.printf("Saldo atual: R$%.2f\n", saldo);
+                    break;
+                case 3:
+                    System.out.print("\nDigite o valor a ser depositado: ");
+                    valor = entrada.nextDouble();
+                    if (valor > 0) {
+                        saldo += valor; // += Adiciona o "valor" em "saldo"
+                        System.out.printf("Depósito realizado com sucesso. Novo saldo: R$%.2f\n", saldo);
+                    } else {
+                        System.out.println("Valor inválido para depósito.");   
+                    break;
+                case 4:
+                    System.out.print("\nDigite o valor a ser sacado: ");
+                    valor = entrada.nextDouble();
+                    if (valor > 0 && valor <= saldo) {
+                        saldo -= valor;
+                        System.out.printf("Saque realizado com sucesso. Novo saldo: R$%.2f\n", saldo);
+                    } else if (valor > saldo) {
+                        System.out.println("Saldo insuficiente para realizar o saque.");
+                    } else {
+                        System.out.println("Valor inválido para saque.");
+                    }
+                    break;
+                case 5:
+                    System.out.println("\nSaindo do programa.");
+                    break;
+                default:
+                    System.out.println("\nOpção inválida! Saindo do programa.");
+                    break;
+            }
+        } while (opcao != 5);
+
+        entrada.close();
+    }
+}
