@@ -1,0 +1,53 @@
+20. Escreva um programa em Java para ler: 
+• a descrição do produto (nome) 
+• a quantidade adquirida 
+• o preço unitário. 
+Calcula e escreve o total (total = quantidade adquirida * preço unitário), o desconto e total a pagar (total a pagar = total - desconto), sabendo-se que: 
+• Se quantidade <= 5, o desconto será de 2% 
+• Se quantidade > 5 e quantidade <=10, o desconto será de 3% 
+• Se quantidade > 10 e quantidade <30, o desconto será de 5% 
+• Se quantidade >= 30 o desconto será de 10% 
+
+import java.util.Scanner; 
+ 
+public class Main { 
+    public static void main(String[] args) { 
+        Scanner entrada = new Scanner(System.in); 
+ 
+        // Entrada dos dados 
+        System.out.print("Digite a descrição do produto: "); 
+        String descricao = entrada.nextLine(); 
+ 
+        System.out.print("Digite a quantidade adquirida: "); 
+        int quantidade = entrada.nextInt(); 
+ 
+        System.out.print("Digite o preço unitário: R$ "); 
+        double preco = entrada.nextDouble(); 
+ 
+        double total = quantidade * preco;// Calcula o total 
+ 
+        double percentualDesconto;        // percentual de desconto 
+        if (quantidade <= 5) { 
+            percentualDesconto = 2.0; 
+        } else if (quantidade > 5 && quantidade <= 10) { 
+            percentualDesconto = 3.0; 
+        } else if (quantidade > 10 && quantidade < 30) { 
+            percentualDesconto = 5.0; 
+        } else { 
+            percentualDesconto = 10.0; 
+        } 
+        // Calcula o desconto e o total a pagar 
+        double desconto = total * (percentualDesconto / 100); 
+        double totalAPagar = total - desconto; 
+ 
+        // Exibe os resultados 
+        System.out.println("\nDescrição do produto: " + descricao); 
+        System.out.printf("Total sem desconto: R$ %.2f\n", total); 
+        System.out.printf("Desconto aplicado: %.2f%%\n", percentualDesconto); 
+        System.out.printf("Valor do desconto: R$ %.2f\n", desconto); 
+        System.out.printf("Total a pagar: R$ %.2f\n", totalAPagar); 
+ 
+        entrada.close(); 
+    } 
+} 
+ 
